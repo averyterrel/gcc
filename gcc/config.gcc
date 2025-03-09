@@ -972,6 +972,13 @@ case ${target} in
       ;;
   esac
   ;;
+*-*-stanix*)
+  extra_options="$extra_options gnu-user.opt"
+  gas=yes
+  gnu_ld=yes
+  default_use_cxa_atexit=yes
+  use_gcc_stdint=none
+  ;;
 *-*-netbsd*)
   tm_p_file="${tm_p_file} netbsd-protos.h"
   tmake_file="t-netbsd t-slibgcc"
