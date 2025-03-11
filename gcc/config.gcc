@@ -972,13 +972,6 @@ case ${target} in
       ;;
   esac
   ;;
-*-*-stanix*)
-  extra_options="$extra_options gnu-user.opt"
-  gas=yes
-  gnu_ld=yes
-  default_use_cxa_atexit=yes
-  use_gcc_stdint=none
-  ;;
 *-*-netbsd*)
   tm_p_file="${tm_p_file} netbsd-protos.h"
   tmake_file="t-netbsd t-slibgcc"
@@ -3646,6 +3639,13 @@ m32c-*-elf*)
 	c_target_objs="m32c-pragma.o"
 	cxx_target_objs="m32c-pragma.o"
  	;;
+*-*-stanix*)
+  extra_options="$extra_options gnu-user.opt"
+  gas=yes
+  gnu_ld=yes
+  default_use_cxa_atexit=yes
+  use_gcc_stdint=none
+  ;;
 *)
 	echo "*** Configuration ${target} not supported" 1>&2
 	exit 1
